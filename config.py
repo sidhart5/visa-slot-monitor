@@ -8,6 +8,14 @@ from dotenv import load_dotenv
 load_dotenv()  # reads .env file automatically
 
 # ── URLs to watch ──────────────────────────────────────────────────────────────
+CITIES = {
+    "New Delhi": "new-delhi-P147",
+    "Mumbai": "mumbai-P139",
+    "Chennai": "chennai-P48",
+    "Hyderabad": "hyderabad-P85",
+    "Kolkata": "kolkata-P100",
+}
+
 URLS = [
     {
         "label": f"VisaGrader — {city} B1/B2",
