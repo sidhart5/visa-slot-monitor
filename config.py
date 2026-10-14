@@ -10,53 +10,15 @@ load_dotenv()  # reads .env file automatically
 # ── URLs to watch ──────────────────────────────────────────────────────────────
 URLS = [
     {
-        "label": "CheckVisaSlots — H1B Regular",
-        "url": "https://checkvisaslots.com/latest-us-visa-availability/h-1b-regular/",
-    },
-    # ── VisaGrader — H1B Biometrics ───────────────────────────────────────────
-    {
-        "label": "VisaGrader — New Delhi H1B Biometrics",
-        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/new-delhi-P147/h1b-visa-H1B#Biometrics",
-    },
-    {
-        "label": "VisaGrader — Chennai H1B Biometrics",
-        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/chennai-P48/h1b-visa-H1B#Biometrics",
-    },
-    {
-        "label": "VisaGrader — Hyderabad H1B Biometrics",
-        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/hyderabad-P85/h1b-visa-H1B#Biometrics",
-    },
-    {
-        "label": "VisaGrader — Kolkata H1B Biometrics",
-        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/kolkata-P100/h1b-visa-H1B#Biometrics",
-    },
-    {
-        "label": "VisaGrader — Mumbai H1B Biometrics",
-        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/mumbai-P139/h1b-visa-H1B#Biometrics",
-    },
-    # ── VisaGrader — H1B Interview ────────────────────────────────────────────
-    {
-        "label": "VisaGrader — New Delhi H1B Interview",
-        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/new-delhi-P147/h1b-visa-H1B#Interview",
-    },
-    {
-        "label": "VisaGrader — Chennai H1B Interview",
-        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/chennai-P48/h1b-visa-H1B#Interview",
-    },
-    {
-        "label": "VisaGrader — Hyderabad H1B Interview",
-        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/hyderabad-P85/h1b-visa-H1B#Interview",
-    },
-    {
-        "label": "VisaGrader — Kolkata H1B Interview",
-        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/kolkata-P100/h1b-visa-H1B#Interview",
-    },
-    {
-        "label": "VisaGrader — Mumbai H1B Interview",
-        "url": "https://visagrader.com/us-visa-time-slots-availability/india-ind/mumbai-P139/h1b-visa-H1B#Interview",
-    },
+        "label": f"VisaGrader — {city} B1/B2",
+        "url": (
+            "https://visagrader.com/"
+            "us-visa-time-slots-availability/"
+            f"india-ind/{slug}/b1b2-visa-B1"
+        ),
+    }
+    for city, slug in CITIES.items()
 ]
-
 # ── Check frequency ────────────────────────────────────────────────────────────
 # How often to check each URL (in seconds)
 # 300 = every 5 minutes  |  60 = every minute  |  180 = every 3 minutes
